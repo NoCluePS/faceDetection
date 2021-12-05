@@ -10,7 +10,7 @@ real_time = input('Real-time? (y/n) ') == 'y';
 
 if (not real_time):
     url = input('Image URl: ');
-    save_name = 'heads/head.jpg';
+    save_name = 'head.jpg';
 
     img = '';
 
@@ -31,6 +31,6 @@ if (not real_time):
     cv2.imshow('Face detection', img);
     cv2.waitKey();
 
-    os.remove('heads/head.jpg');
+    os.remove('head.jpg');
 else:
     print('TBD, try out the image url part of the program')
