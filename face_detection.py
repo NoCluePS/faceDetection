@@ -44,6 +44,7 @@ else:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
             cv2.putText(frame, 'Face', (x, y-4), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         cv2.imshow('Face detection', frame);
+        # Gets ascii value of the key
         key = cv2.waitKey(1);
 
         if key == 82 or key == 113:
