@@ -42,7 +42,7 @@ else:
             
         face_coordinates = trained_data.detectMultiScale(grayscaled_frame);
         for (x, y, w, h) in face_coordinates:
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (randrange(0, 255), randrange(0, 255), randrange(0, 255)), 2)
+            cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
             cv2.putText(frame, 'Face', (x, y-4), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         cv2.imshow('Face detection', frame);
         cv2.waitKey(1);
