@@ -37,7 +37,6 @@ else:
 
     while True:
         successful_frame_read, frame = webcam.read()
-
         grayscaled_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY);
             
         face_coordinates = trained_data.detectMultiScale(grayscaled_frame);
@@ -45,4 +44,7 @@ else:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
             cv2.putText(frame, 'Face', (x, y-4), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         cv2.imshow('Face detection', frame);
-        cv2.waitKey(1);
+        key = cv2.waitKey(1);
+
+        if key == 82 or key == 113:
+            break
