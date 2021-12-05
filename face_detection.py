@@ -2,6 +2,7 @@ import cv2
 import urllib.request
 import os
 import validators
+from random import randrange
 
 # Load data into py file
 trained_data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml');
@@ -25,7 +26,7 @@ if (not real_time):
 
     face_coordinates = trained_data.detectMultiScale(grayscaled_img);
     for (x, y, w, h) in face_coordinates:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 255), 2)
+        cv2.rectangle(img, (x, y), (x+w, y+h), (randrange(0, 255), randrange(0, 255), randrange(0, 255)), 2)
         cv2.putText(img, 'Face', (x, y-4), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
 
     cv2.imshow('Face detection', img);
