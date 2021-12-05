@@ -9,7 +9,7 @@ trained_data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml');
 real_time = input('Real-time? (y/n) ') == 'y';
 
 if (not real_time):
-    url = input('Image url: ');
+    url = input('Image URl: ');
     save_name = 'heads/head.jpg';
 
     img = '';
